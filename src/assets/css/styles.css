@@ -129,3 +129,13 @@ details[open] .faq-chevron {
 .font-heading {
   font-family: var(--font-family-heading);
 }
+
+/* === Contrast fix: muted text on dark backgrounds ===
+   --color-muted-foreground is optimised for light bg (#FAF9F5).
+   On dark sections (bg-surface #000321, bg-secondary #222639) the
+   same colour fails WCAG AA.  Override to secondary-foreground at
+   70% opacity which gives ≥7:1 on both dark tokens. */
+.bg-surface .text-muted-foreground,
+.bg-secondary .text-muted-foreground {
+  color: rgba(244, 242, 242, 0.70);
+}
