@@ -4,36 +4,42 @@
 @source "../../**/*.njk";
 @source "../../**/*.md";
 
-/* === HeyKIRI Dark Theme === */
+/* === HeyKIRI Light Theme === */
 @theme {
-  /* Dark backgrounds */
-  --color-background: hsl(240 10% 6%);
-  --color-foreground: hsl(0 0% 95%);
-  --color-surface: hsl(240 8% 10%);
+  /* Light page background */
+  --color-background: #FAF9F5;
+  --color-foreground: #161D1D;
 
-  /* Primary — warm gold accent */
-  --color-primary: hsl(38 90% 55%);
-  --color-primary-foreground: hsl(240 10% 6%);
+  /* Dark sections — deep navy */
+  --color-surface: #000321;
 
-  /* Secondary */
-  --color-secondary: hsl(240 8% 14%);
-  --color-secondary-foreground: hsl(0 0% 90%);
+  /* Primary — teal accent */
+  --color-primary: #6EA7C4;
+  --color-primary-foreground: #175681;
+
+  /* Secondary — navy-purple cards (used on dark sections) */
+  --color-secondary: #222639;
+  --color-secondary-foreground: #F4F2F2;
 
   /* Muted text / borders */
-  --color-muted: hsl(240 5% 22%);
-  --color-muted-foreground: hsl(240 5% 60%);
-
-  /* Accent */
-  --color-accent: hsl(38 90% 55%);
-  --color-accent-foreground: hsl(240 10% 6%);
+  --color-muted: #EDE7FB;
+  --color-muted-foreground: #8893A8;
 
   /* Utility */
-  --color-border: hsl(240 5% 18%);
+  --color-border: #E5E5E5;
   --color-destructive: hsl(0 84% 60%);
   --color-destructive-foreground: hsl(0 0% 100%);
 
+  /* CTA special bg */
+  --color-cta-bg: #BFFBFF;
+
+  /* Accent colors */
+  --color-accent-pink: #D16BA5;
+  --color-accent-purple: #9A9AE1;
+
   /* Typography */
-  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-family-heading: "Comfortaa", ui-sans-serif, system-ui, sans-serif;
   --font-family-mono: ui-monospace, monospace;
 }
 
@@ -87,13 +93,13 @@ details[open] .faq-chevron {
   transition: transform 0.2s ease;
 }
 
-/* === Nav scroll state (dark) === */
+/* === Nav scroll state (light) === */
 .nav-scrolled {
-  background-color: hsl(240 10% 6% / 0.92);
+  background-color: color-mix(in srgb, var(--color-background) 95%, transparent);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 1px 3px hsl(0 0% 0% / 0.3);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
 }
 
 /* === Spinner animation === */
@@ -105,10 +111,21 @@ details[open] .faq-chevron {
   animation: spin 0.75s linear infinite;
 }
 
-/* === Gradient text utility === */
+/* === Gradient text utility (teal accent) === */
 .text-gradient {
-  background: linear-gradient(135deg, hsl(38 90% 55%), hsl(30 100% 65%));
+  background: linear-gradient(135deg, #6EA7C4, #9A9AE1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* === CTA gradient — signature pink-to-teal on primary action buttons === */
+.cta-gradient {
+  background: linear-gradient(to right top, #D16BA5, #C777B9, #BA83CA, #AA8FD8, #9A9AE1, #8AA7EC, #79B3F4, #69BFF8, #52CFFE, #41DFFF, #46EEFA, #5FFBF1);
+  background-color: #BFFBFF;
+}
+
+/* === Heading font utility === */
+.font-heading {
+  font-family: var(--font-family-heading);
 }

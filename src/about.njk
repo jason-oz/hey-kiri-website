@@ -1,40 +1,110 @@
 ---
 layout: layouts/base.njk
-title: "About | HeyKIRI"
-description: "Meet the brand strategist behind HeyKIRI. Research-driven brand identity design for founders and small teams ready to stand out."
+title: "About Kiri | Brand Strategist Behind HeyKIRI"
+description: "Meet Kiri — the brand strategist who builds brands around research, not guesswork. Founder of HeyKIRI, working with founders and small teams ready to stand out."
 permalink: /about/
 breadcrumb: About
 ---
 
-<section class="pt-28 pb-20 px-6">
-  <div class="mx-auto max-w-4xl">
-    <p class="text-sm uppercase tracking-widest text-primary mb-4 font-medium">About HeyKIRI</p>
-    <h1 class="text-4xl md:text-5xl font-bold mb-8">The strategist behind the brand</h1>
-
+{# HERO #}
+<section class="pt-28 pb-16 px-6 bg-background">
+  <div class="mx-auto max-w-5xl">
     <div class="grid md:grid-cols-5 gap-12 items-start">
-      <div class="md:col-span-2">
-        <img src="/assets/images/kiri-vanderwel-bio.jpg" alt="Kiri Vanderwel — Brand Strategist and founder of HeyKIRI" class="w-full rounded-xl border border-border object-cover aspect-[3/4]" loading="eager" />
+      <div class="md:col-span-2 animate-on-scroll">
+        <div class="rounded-2xl overflow-hidden shadow-xl">
+          <img src="/assets/images/kiri-vanderwel-bio.jpg" alt="Kiri Vanderwel — Brand Strategist and founder of HeyKIRI" class="w-full object-cover aspect-[3/4]" loading="eager" />
+        </div>
       </div>
 
-      {# Bio #}
-      <div class="md:col-span-3 space-y-6">
-        <p class="text-lg text-muted-foreground">
-          <!-- REPLACE: Kiri's actual bio copy. Below is placeholder based on current site positioning. -->
-          HeyKIRI was born from a simple belief: your brand should do the talking for you. Not louder — clearer.
-        </p>
-        <p class="text-muted-foreground">
-          Too many founders invest in visuals before they've invested in understanding. A logo without strategy is just decoration. A brand built on research is a business asset.
-        </p>
-        <p class="text-muted-foreground">
-          The HeyKIRI Protocol combines deep market research, audience psychology, and strategic positioning to create brands that resonate with the right people — not just look good on a mood board.
-        </p>
-        <p class="text-muted-foreground">
-          Whether you're launching something new or repositioning what you've already built, the process is the same: research first, design second, deploy with confidence.
-        </p>
+      <div class="md:col-span-3 animate-on-scroll" data-delay="100">
+        <p class="text-sm uppercase tracking-widest text-primary mb-4 font-medium">The Strategist</p>
+        <h1 class="font-heading text-4xl md:text-5xl font-medium mb-6 leading-tight">I build brands that don't just look good — they work.</h1>
 
-        <div class="pt-4">
-          <a href="/contact" class="inline-flex items-center bg-primary text-primary-foreground font-semibold rounded-lg px-6 py-3 hover:brightness-110 transition-all min-h-[44px]">
-            Let's Talk
+        <div class="space-y-5 text-muted-foreground leading-relaxed">
+          <p>Hi, I'm Kiri. I'm a brand strategist for founders and small teams who know their business is stronger than their brand currently reflects.</p>
+          <p class="text-foreground font-medium">I started HeyKIRI because I kept watching capable people get held back by brands built on gut feeling and trend-chasing. A logo that looked fine but said nothing. Messaging that attracted the wrong clients. A visual identity that felt generic — because it was.</p>
+          <p>The fix wasn't better design. It was strategy first. Understanding the market, owning a clear position, then designing from somewhere — not nowhere.</p>
+          <p>
+            <!-- CLIENT INPUT: Add your real background here — years in the field, specific experience, turning point that led to HeyKIRI -->
+            The HeyKIRI Protocol is the process I developed to do exactly that: deep research, a strategic blueprint, creative synthesis, and a brand ready to deploy. No shortcuts. No mood boards in phase one. Just work that holds up.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+          <a href="/contact" class="cta-gradient text-primary-foreground font-semibold rounded-full px-6 py-3 hover:brightness-110 hover:shadow-lg transition-all min-h-[44px] flex items-center justify-center">
+            Work With Me
+          </a>
+          <a href="/services" class="border border-border text-foreground font-semibold rounded-full px-6 py-3 hover:bg-white/50 transition-all min-h-[44px] flex items-center justify-center">
+            See the Protocol
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# WHY IT MATTERS #}
+<section class="py-20 px-6 bg-surface">
+  <div class="mx-auto max-w-4xl animate-on-scroll">
+    <p class="text-sm uppercase tracking-widest text-muted-foreground mb-4 font-medium">The Philosophy</p>
+    <h2 class="font-heading text-3xl md:text-4xl font-medium mb-8 text-secondary-foreground max-w-2xl">Most branding projects start at the end. We start at the beginning.</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6EA7C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <h3 class="font-heading text-base font-medium text-secondary-foreground mb-2">Research is the work</h3>
+        <p class="text-muted-foreground text-sm leading-relaxed">Understanding your market, your audience, and your competitive gap isn't prep — it's the core of every engagement. Everything else follows from it.</p>
+      </div>
+      <div>
+        <div class="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6EA7C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <h3 class="font-heading text-base font-medium text-secondary-foreground mb-2">Design needs a reason</h3>
+        <p class="text-muted-foreground text-sm leading-relaxed">Every visual decision — colour, type, form — has a strategic rationale. You'll be able to explain your brand to anyone, not just point at it and hope they get it.</p>
+      </div>
+      <div>
+        <div class="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6EA7C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="font-heading text-base font-medium text-secondary-foreground mb-2">You own the outcome</h3>
+        <p class="text-muted-foreground text-sm leading-relaxed">The deliverable isn't just files. It's clarity. You'll know why your brand is positioned how it is, and how to use it going forward without needing to come back for every decision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# PROCESS SNAPSHOT #}
+<section class="py-20 px-6 bg-background">
+  <div class="mx-auto max-w-4xl">
+    <div class="grid md:grid-cols-2 gap-12 items-center animate-on-scroll">
+      <div>
+        <img src="/assets/images/about-brand-strategist-96436.png" alt="Brand strategist workspace — professional creative environment" class="w-full rounded-2xl shadow-lg object-cover" loading="lazy" />
+      </div>
+      <div>
+        <p class="text-sm uppercase tracking-widest text-muted-foreground mb-4 font-medium">What to Expect</p>
+        <h2 class="font-heading text-2xl md:text-3xl font-medium mb-6">A collaboration, not a hand-off.</h2>
+        <ul class="space-y-4 text-muted-foreground">
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-0.5 shrink-0 font-bold">&#8212;</span>
+            <span>You'll be involved in the research phase — your knowledge of your business and clients is essential input</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-0.5 shrink-0 font-bold">&#8212;</span>
+            <span>Every stage is explained before execution — you'll understand the thinking, not just approve the output</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-0.5 shrink-0 font-bold">&#8212;</span>
+            <span>You'll have a direct line to me throughout — not a project manager in the middle</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-0.5 shrink-0 font-bold">&#8212;</span>
+            <span>You'll leave with a brand system you can actually use and grow with</span>
+          </li>
+        </ul>
+        <div class="mt-8">
+          <a href="{{ site.ctaUrl }}" class="inline-flex items-center gap-2 cta-gradient text-primary-foreground font-semibold rounded-full px-6 py-3 hover:brightness-110 hover:shadow-lg transition-all min-h-[44px]">
+            {{ site.ctaLabel }}
           </a>
         </div>
       </div>
