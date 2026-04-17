@@ -17,7 +17,7 @@
     { "label": "FAQ", "url": "/faq" },
     { "label": "Contact", "url": "/contact" }
   ],
-  "ctaLabel": "Book a Discovery Call",
+  "ctaLabel": "Hey KIRI...",
   "ctaUrl": "/contact",
   "social": {
     "facebook": "",

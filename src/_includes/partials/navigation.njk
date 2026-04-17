@@ -1,10 +1,9 @@
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300" data-nosnippet>
   <div class="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
 
-    {# Logo #}
-    <a href="/" class="flex items-center gap-3">
-      <img src="/assets/images/logo.png" alt="{{ site.author }}" class="h-10 w-auto" />
-      <span class="font-semibold text-foreground hidden sm:block">{{ site.author }}</span>
+    {# Logo — text mark until client supplies logo.png #}
+    <a href="/" class="flex items-center gap-1" aria-label="{{ site.author }} home">
+      <span class="font-heading font-semibold text-xl text-foreground tracking-tight">Hey</span><span class="font-heading font-semibold text-xl text-primary tracking-tight">KIRI</span>
     </a>
 
     {# Desktop links #}
@@ -16,7 +15,7 @@
       </a>
       {% endfor %}
       <a href="{{ site.ctaUrl }}"
-         class="bg-primary text-primary-foreground font-semibold text-sm rounded-lg px-5 py-2.5 hover:brightness-110 transition-all min-h-[44px] flex items-center">
+         class="cta-gradient text-primary-foreground font-semibold text-sm rounded-full px-5 py-2.5 hover:brightness-110 hover:shadow-lg transition-all min-h-[44px] flex items-center">
         {{ site.ctaLabel }}
       </a>
     </div>
@@ -41,7 +40,7 @@
     </a>
     {% endfor %}
     <a href="{{ site.ctaUrl }}"
-       class="block w-full text-center bg-primary text-primary-foreground font-semibold rounded-lg px-5 py-3 hover:brightness-110 transition-all min-h-[44px]">
+       class="block w-full text-center cta-gradient text-primary-foreground font-semibold rounded-full px-5 py-3 hover:brightness-110 hover:shadow-lg transition-all min-h-[44px]">
       {{ site.ctaLabel }}
     </a>
   </div>

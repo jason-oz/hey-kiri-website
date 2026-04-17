@@ -14,8 +14,8 @@ Website rebuild for HeyKIRI (heykiri.io) — brand strategist for founders, solo
 ## Tech Stack
 - **Framework:** Eleventy v3 + Tailwind CSS v4
 - **Hosting:** Vercel (not yet deployed)
-- **Theme:** Dark (near-black background, warm gold accent)
-- **Font:** Inter (Google Fonts)
+- **Theme:** Light (warm off-white bg, dark navy sections, teal/gradient accents)
+- **Fonts:** Comfortaa (headings) + Poppins (body) — Google Fonts
 
 ## Pages (5)
 1. **Home** — Hero, HeyKIRI Protocol (4-phase process), "Is this for you?" qualifier, values, CTA
@@ -52,8 +52,14 @@ All copy is drafted based on research of the current heykiri.io site. Needs:
 7. Point heykiri.io DNS to Vercel
 
 ## Design Tokens
-- Background: `hsl(240 10% 6%)` (near-black)
-- Foreground: `hsl(0 0% 95%)` (off-white)
-- Primary: `hsl(38 90% 55%)` (warm gold)
-- Surface: `hsl(240 8% 10%)` (dark card bg)
-- Secondary: `hsl(240 8% 14%)` (darker section bg)
+- Background: `#FAF9F5` (warm off-white — page bg)
+- Foreground: `#161D1D` (dark teal-charcoal — text on light)
+- Surface: `#000321` (deep navy — dark section bg)
+- Primary: `#6EA7C4` (teal — accents, nav links, checkmarks)
+- Primary-foreground: `#175681` (dark teal — CTA button text)
+- Secondary: `#222639` (navy-purple — cards on dark sections)
+- Secondary-foreground: `#F4F2F2` (off-white — text on dark)
+- Muted-foreground: `#8893A8` (blue-gray — secondary text)
+- CTA gradient: pink (#D16BA5) → purple → teal (#5FFBF1)
+
+See `DESIGN.md` for full design system.

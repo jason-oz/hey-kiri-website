@@ -24,7 +24,8 @@ breadcrumb: Contact
           <a href="mailto:{{ site.email }}" class="block text-lg font-semibold hover:text-primary transition-colors min-h-[44px] py-2">{{ site.email }}</a>
         </div>
 
-        {# Social links #}
+        {# Social links — only shown when URLs are configured #}
+        {% if site.social.instagram or site.social.facebook or site.social.linkedin %}
         <div>
           <p class="text-sm text-muted-foreground uppercase tracking-wider mb-3">Connect</p>
           <div class="flex gap-4">
@@ -45,6 +46,7 @@ breadcrumb: Contact
             {% endif %}
           </div>
         </div>
+        {% endif %}
 
         {# Discovery call booking embed #}
         <div>
@@ -52,9 +54,10 @@ breadcrumb: Contact
           <div class="bg-white rounded-xl p-6 border border-border">
             <p class="text-sm font-semibold mb-2">Book a Discovery Call</p>
             <p class="text-muted-foreground text-sm mb-4">Free, no-obligation — pick a time that works for you.</p>
-            <!-- REPLACE: Embed Kiri's booking calendar widget here (Calendly, Cal.com, HighLevel, etc.) -->
+            <!-- TODO: Replace with booking calendar embed (Calendly, Cal.com, etc.) -->
             <div class="bg-background rounded-lg p-4 border border-border text-center">
-              <p class="text-muted-foreground text-sm">Booking calendar embed goes here</p>
+              <p class="text-muted-foreground text-sm mb-2">Online booking coming soon.</p>
+              <p class="text-muted-foreground text-sm">In the meantime, reach out via phone, text, or the form — I'll reply within 1 business day.</p>
             </div>
           </div>
         </div>

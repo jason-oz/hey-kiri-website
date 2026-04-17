@@ -13,17 +13,17 @@
   /* Dark sections — deep navy */
   --color-surface: #000321;
 
-  /* Primary — teal accent */
-  --color-primary: #6EA7C4;
+  /* Primary — teal accent (darkened to #3D7A94 for WCAG AA on light bg) */
+  --color-primary: #3D7A94;
   --color-primary-foreground: #175681;
 
   /* Secondary — navy-purple cards (used on dark sections) */
   --color-secondary: #222639;
   --color-secondary-foreground: #F4F2F2;
 
-  /* Muted text / borders */
+  /* Muted text / borders (darkened to #5F6B7A for WCAG AA on light bg) */
   --color-muted: #EDE7FB;
-  --color-muted-foreground: #8893A8;
+  --color-muted-foreground: #5F6B7A;
 
   /* Utility */
   --color-border: #E5E5E5;
