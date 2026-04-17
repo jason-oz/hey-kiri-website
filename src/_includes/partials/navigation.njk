@@ -1,0 +1,48 @@
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300" data-nosnippet>
+  <div class="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
+
+    {# Logo #}
+    <a href="/" class="flex items-center gap-3">
+      <img src="/assets/images/logo.png" alt="{{ site.author }}" class="h-10 w-auto" />
+      <span class="font-semibold text-foreground hidden sm:block">{{ site.author }}</span>
+    </a>
+
+    {# Desktop links #}
+    <div class="hidden md:flex items-center gap-8">
+      {% for link in site.navLinks %}
+      <a href="{{ link.url }}"
+         class="text-sm transition-colors {% if page.url == link.url + '/' or page.url == link.url %}text-primary font-semibold{% else %}text-muted-foreground hover:text-foreground{% endif %}">
+        {{ link.label }}
+      </a>
+      {% endfor %}
+      <a href="{{ site.ctaUrl }}"
+         class="bg-primary text-primary-foreground font-semibold text-sm rounded-lg px-5 py-2.5 hover:brightness-110 transition-all min-h-[44px] flex items-center">
+        {{ site.ctaLabel }}
+      </a>
+    </div>
+
+    {# Mobile hamburger #}
+    <button id="nav-toggle" class="md:hidden text-foreground p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span id="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </span>
+      <span id="close-icon" class="hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </span>
+    </button>
+  </div>
+
+  {# Mobile menu #}
+  <div id="mobile-menu" class="hidden md:hidden bg-background/95 backdrop-blur-xl border-t border-foreground/5 px-6 py-6 space-y-4">
+    {% for link in site.navLinks %}
+    <a href="{{ link.url }}"
+       class="block py-2 transition-colors min-h-[44px] flex items-center {% if page.url == link.url + '/' or page.url == link.url %}text-primary font-semibold{% else %}text-muted-foreground hover:text-foreground{% endif %}">
+      {{ link.label }}
+    </a>
+    {% endfor %}
+    <a href="{{ site.ctaUrl }}"
+       class="block w-full text-center bg-primary text-primary-foreground font-semibold rounded-lg px-5 py-3 hover:brightness-110 transition-all min-h-[44px]">
+      {{ site.ctaLabel }}
+    </a>
+  </div>
+</nav>

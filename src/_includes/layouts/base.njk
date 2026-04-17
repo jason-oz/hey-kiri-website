@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {# --- Core meta --- #}
+    <title>{{ title if title else site.title }}</title>
+    <meta name="description" content="{{ description if description else site.description }}" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    {# --- Inter font --- #}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    {# --- SEO --- #}
+    <meta name="robots" content="{% if noindex %}noindex, nofollow{% else %}index, follow{% endif %}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+    {# --- Open Graph --- #}
+    <meta property="og:title" content="{{ og_title if og_title else (title if title else site.title) }}" />
+    <meta property="og:description" content="{{ og_description if og_description else (description if description else site.description) }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ site.url }}/assets/images/og-image.jpg" />
+
+    {# --- Twitter Card --- #}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ og_title if og_title else (title if title else site.title) }}" />
+    <meta name="twitter:description" content="{{ og_description if og_description else (description if description else site.description) }}" />
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/og-image.jpg" />
+
+    {# --- JSON-LD: ProfessionalService + WebSite --- #}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "{{ site.businessType }}",
+          "@id": "{{ site.url }}/#business",
+          "name": "{{ site.author }}",
+          "url": "{{ site.url }}",
+          "telephone": "{{ site.phone }}",
+          "email": "{{ site.email }}",
+          {% if site.address.country %}
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "{{ site.address.country }}"
+          },
+          {% endif %}
+          "description": "{{ site.description }}",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}/assets/images/logo.png"
+          }{% if site.social %},
+          "sameAs": [
+            {% if site.social.facebook %}"{{ site.social.facebook }}"{% endif %}
+            {% if site.social.instagram %}{% if site.social.facebook %},{% endif %}"{{ site.social.instagram }}"{% endif %}
+            {% if site.social.linkedin %}{% if site.social.facebook or site.social.instagram %},{% endif %}"{{ site.social.linkedin }}"{% endif %}
+            {% if site.social.tiktok %}{% if site.social.facebook or site.social.instagram or site.social.linkedin %},{% endif %}"{{ site.social.tiktok }}"{% endif %}
+            {% if site.social.youtube %}{% if site.social.facebook or site.social.instagram or site.social.linkedin or site.social.tiktok %},{% endif %}"{{ site.social.youtube }}"{% endif %}
+          ]
+          {% endif %}
+        },
+        {
+          "@type": "WebSite",
+          "@id": "{{ site.url }}/#website",
+          "url": "{{ site.url }}",
+          "name": "{{ site.author }}",
+          "description": "{{ site.description }}",
+          "publisher": { "@id": "{{ site.url }}/#business" }
+        }
+      ]
+    }
+    </script>
+
+    {# --- BreadcrumbList (inner pages only) --- #}
+    {% if page.url != "/" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ breadcrumb if breadcrumb else title }}",
+          "item": "{{ site.url }}{{ page.url }}"
+        }
+      ]
+    }
+    </script>
+    {% endif %}
+
+    {# --- Page-specific schema --- #}
+    {% if schemaBlock %}
+    <script type="application/ld+json">{{ schemaBlock | safe }}</script>
+    {% endif %}
+
+    {# --- GA4 --- #}
+    {% if site.gaId and site.gaId != "G-XXXXXXXXXX" and site.gaId != "" %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gaId }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.gaId }}');
+    </script>
+    {% endif %}
+
+    {# --- Speculation Rules --- #}
+    <script type="speculationrules">
+    {
+      "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }],
+      "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+    }
+    </script>
+
+    {% block head %}{% endblock %}
+  </head>
+  <body class="min-h-screen bg-background text-foreground font-sans antialiased">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lg">Skip to main content</a>
+
+    {% include "partials/navigation.njk" %}
+
+    <main id="main-content">
+      {{ content | safe }}
+    </main>
+
+    {% include "partials/footer.njk" %}
+
+    <script src="/assets/js/scroll-animation.js" defer></script>
+    <script src="/assets/js/nav-toggle.js" defer></script>
+
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

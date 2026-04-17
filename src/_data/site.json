@@ -1,0 +1,29 @@
+{
+  "title": "HeyKIRI | Brand Strategist",
+  "description": "Brand strategy and identity design for founders, solopreneurs, and small teams who are ready to stand out. Research-driven branding that speaks clearly to your audience.",
+  "author": "HeyKIRI",
+  "url": "https://heykiri.io",
+  "phone": "+14696497788",
+  "phoneDisplay": "(469) 649-7788",
+  "email": "hello@heykiri.io",
+  "address": {
+    "country": "US"
+  },
+  "businessType": "ProfessionalService",
+  "gaId": "",
+  "navLinks": [
+    { "label": "About", "url": "/about" },
+    { "label": "Services", "url": "/services" },
+    { "label": "FAQ", "url": "/faq" },
+    { "label": "Contact", "url": "/contact" }
+  ],
+  "ctaLabel": "Book a Discovery Call",
+  "ctaUrl": "/contact",
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": "",
+    "tiktok": "",
+    "youtube": ""
+  }
+}

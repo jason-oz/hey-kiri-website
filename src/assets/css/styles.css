@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* === Source scanning === */
+@source "../../**/*.njk";
+@source "../../**/*.md";
+
+/* === HeyKIRI Dark Theme === */
+@theme {
+  /* Dark backgrounds */
+  --color-background: hsl(240 10% 6%);
+  --color-foreground: hsl(0 0% 95%);
+  --color-surface: hsl(240 8% 10%);
+
+  /* Primary — warm gold accent */
+  --color-primary: hsl(38 90% 55%);
+  --color-primary-foreground: hsl(240 10% 6%);
+
+  /* Secondary */
+  --color-secondary: hsl(240 8% 14%);
+  --color-secondary-foreground: hsl(0 0% 90%);
+
+  /* Muted text / borders */
+  --color-muted: hsl(240 5% 22%);
+  --color-muted-foreground: hsl(240 5% 60%);
+
+  /* Accent */
+  --color-accent: hsl(38 90% 55%);
+  --color-accent-foreground: hsl(240 10% 6%);
+
+  /* Utility */
+  --color-border: hsl(240 5% 18%);
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  /* Typography */
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: ui-monospace, monospace;
+}
+
+/* === Base styles === */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* === Scroll animation === */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll[data-delay="100"] { transition-delay: 100ms; }
+.animate-on-scroll[data-delay="200"] { transition-delay: 200ms; }
+.animate-on-scroll[data-delay="300"] { transition-delay: 300ms; }
+.animate-on-scroll[data-delay="400"] { transition-delay: 400ms; }
+.animate-on-scroll[data-delay="500"] { transition-delay: 500ms; }
+
+/* === FAQ accordion === */
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+}
+
+details[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-chevron {
+  transition: transform 0.2s ease;
+}
+
+/* === Nav scroll state (dark) === */
+.nav-scrolled {
+  background-color: hsl(240 10% 6% / 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px hsl(0 0% 0% / 0.3);
+}
+
+/* === Gradient text utility === */
+.text-gradient {
+  background: linear-gradient(135deg, hsl(38 90% 55%), hsl(30 100% 65%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

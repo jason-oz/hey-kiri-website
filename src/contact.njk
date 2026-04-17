@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+title: "Contact | HeyKIRI — Book a Discovery Call"
+description: "Ready to talk about your brand? Book a discovery call with HeyKIRI or get in touch by phone, text, or email."
+permalink: /contact/
+breadcrumb: Contact
+---
+
+<section class="pt-28 pb-20 px-6">
+  <div class="mx-auto max-w-4xl">
+    <p class="text-sm uppercase tracking-widest text-primary mb-4 font-medium">Get in Touch</p>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Let's talk about your brand</h1>
+    <p class="text-lg text-muted-foreground mb-12">Book a discovery call — no pressure, no pitch. Just an honest conversation about where your brand is and where it could be.</p>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      {# Contact details #}
+      <div class="space-y-8">
+        <div>
+          <p class="text-sm text-muted-foreground uppercase tracking-wider mb-2">Phone / Text</p>
+          <a href="tel:{{ site.phone }}" class="block text-lg font-semibold hover:text-primary transition-colors min-h-[44px] py-2">{{ site.phoneDisplay }}</a>
+        </div>
+        <div>
+          <p class="text-sm text-muted-foreground uppercase tracking-wider mb-2">Email</p>
+          <a href="mailto:{{ site.email }}" class="block text-lg font-semibold hover:text-primary transition-colors min-h-[44px] py-2">{{ site.email }}</a>
+        </div>
+
+        {# Social links #}
+        <div>
+          <p class="text-sm text-muted-foreground uppercase tracking-wider mb-3">Connect</p>
+          <div class="flex gap-4">
+            {% if site.social.instagram %}
+            <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            {% endif %}
+            {% if site.social.facebook %}
+            <a href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            {% endif %}
+            {% if site.social.linkedin %}
+            <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {# Discovery call booking embed #}
+      <div class="bg-secondary rounded-xl p-8 border border-border">
+        <h2 class="text-xl font-bold mb-4">Book a Discovery Call</h2>
+        <p class="text-muted-foreground text-sm mb-6">Pick a time that works for you. This is a free, no-obligation conversation about your brand.</p>
+        <!-- REPLACE: Embed Kiri's booking calendar widget here (Calendly, Cal.com, HighLevel, etc.) -->
+        <div class="bg-background/50 rounded-lg p-6 border border-border text-center">
+          <p class="text-muted-foreground text-sm">Booking calendar embed goes here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
